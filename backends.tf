@@ -1,10 +1,9 @@
 terraform {
   cloud {
-    organization = "Your-Organization-Name"
+    organization = "AfroPeep"
 
     workspaces {
-      name = "Your-Workspace-Name"
+      name = "Afropeep"
     }
   }
 }
-
