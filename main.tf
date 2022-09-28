@@ -4,18 +4,7 @@ locals {
 
 data "aws_availability_zones" "available" {}
 
-resource "aws_subnet" "public_subnet" {
-  count                   = length(local.azs)
-  vpc_id                  = aws_vpc.vpc.id
-  cidr_block              = var.public_cidr[count.index]
-  map_public_ip_on_launch = true
-  availability_zone       = local.azs[count.index]
 
-
-  tags = {
-    Name = "docker-public"
-  }
-}
 
 data "aws_ami" "ubuntu" {
   most_recent = true
